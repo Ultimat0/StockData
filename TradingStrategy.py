@@ -41,6 +41,11 @@ class TradingStrategy():
         return req.content.decode('utf-8')
 
     def get_fundamentals (self):
+        #So this appears to be an enormous pain in the butt.
+        #The SEC keeps all the financial data I need, but their website is old,
+        #and I haven't figured out how it's organized. It's certainly not by
+        #ticker. Will delve when I'm less tired
+        #https://www.sec.gov/developer
         print ("TODO")
 
     def train (self):
