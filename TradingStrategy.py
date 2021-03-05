@@ -28,13 +28,15 @@ class TradingStrategy():
         date_array = [i for i in date_range]
         #for date in date_array[::10]:
         url = f"https://api.tdameritrade.com/v1/marketdata/{self.ticker}/pricehistory"
-        params = {"apikey": Utility.Config.API_KEY,
-        "periodType": self.update_frequency.period_type,
-        "frequencyType": self.update_frequency.frequency_type,
-        "frequency": self.update_frequency.frequency,
-        "startDate": str(DateRange.convert_to_millis_since_epoch(date_range.start_date)),
-        "endDate": str(DateRange.convert_to_millis_since_epoch(date_range.end_date)),
-        "needExtendedHoursData": "false"}
+        params = {
+            "apikey": Utility.Config.API_KEY,
+            "periodType": self.update_frequency.period_type,
+            "frequencyType": self.update_frequency.frequency_type,
+            "frequency": self.update_frequency.frequency,
+            "startDate": str(DateRange.convert_to_millis_since_epoch(date_range.start_date)),
+            "endDate": str(DateRange.convert_to_millis_since_epoch(date_range.end_date)),
+            "needExtendedHoursData": "false"
+        }
         req = requests.get(url, params=params)
         print (req.status_code)
         req.raise_for_status()

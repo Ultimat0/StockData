@@ -40,5 +40,5 @@ class DateRange:
         return temp
 
 if __name__ == "__main__":
-    print (DateRange.convert_to_millis_since_epoch(datetime(2020, 6, 1, 0, 0, 0)))
+    print (DateRange.convert_to_millis_since_epoch(datetime(2021, 1, 27, 0, 0, 0)))
     print (DateRange.convert_to_millis_since_epoch(datetime(2020, 6, 23, 0, 0, 0)))
